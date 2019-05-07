@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -38,25 +37,44 @@ dependencies {
     def material_version = "1.0.0"
     implementation "com.google.android.material:material:$material_version"
 
-//    // Retrofit
-//    def retrofitVersion = "2.5.0"
-//    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-//    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
-//
-//    // ViewModel and LiveData
-//    def lifecycle_version = '2.1.0-alpha03'
-//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-//
+    // Retrofit
+    def retrofitVersion = "2.5.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    // ViewModel and LiveData
+    def lifecycle_version = '2.1.0-alpha04'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
 //    // Dagger
     def dagger_version = "2.22"
 //
-//    // Dagger2 core
     implementation "com.google.dagger:dagger:$dagger_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
-//    // Dagger Android
-//    implementation "com.google.dagger:dagger-android:$dagger_version"
-//    implementation "com.google.dagger:dagger-android-support:$dagger_version"
-//    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+//    Dagger Android
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    // Glide
+    def glideVersion = "4.9.0"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // RxAndroid
+    def rxandroid_version = '2.1.1'
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'io.reactivex:rxkotlin:2.0.0-RC1'
+
+    // Rx-Retrofit Call Adapter
+    def rxcalladapter_version = '2.5.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxcalladapter_version" // Retrofit call adapter
+
+    // Reactive Streams (convert Observable to LiveData)
+    def reactivestreams_version = "1.1.1"
+    implementation "android.arch.lifecycle:reactivestreams:$reactivestreams_version"
 }
