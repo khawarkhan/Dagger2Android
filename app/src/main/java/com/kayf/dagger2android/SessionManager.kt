@@ -23,7 +23,6 @@ class SessionManager @Inject constructor() {
 
     fun authenticateWithId(source: LiveData<AuthResource<User>>) {
 
-//        todo check this place
         cachedUser.value = AuthResource.loading(User(-1))
         cachedUser.addSource(source) { userAuthResource ->
             cachedUser.value = userAuthResource

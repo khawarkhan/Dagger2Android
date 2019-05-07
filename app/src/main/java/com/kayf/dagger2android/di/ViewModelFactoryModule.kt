@@ -17,11 +17,6 @@ import dagger.Module
 @Module
 abstract class ViewModelFactoryModule {
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(AuthViewModel::class)
-//    abstract fun bindAuthViewModel(viewModel: AuthViewModel): ViewModel
-
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: ViewModelProviderFactory): ViewModelProvider.Factory
 

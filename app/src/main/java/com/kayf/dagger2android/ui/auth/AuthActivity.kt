@@ -7,18 +7,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.LiveDataReactiveStreams
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.kayf.dagger2android.R
-import com.kayf.dagger2android.models.User
-import com.kayf.dagger2android.network.AuthApi
 import com.kayf.dagger2android.viewmodels.ViewModelProviderFactory
 import dagger.android.support.DaggerAppCompatActivity
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.Function
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class AuthActivity : DaggerAppCompatActivity() {

@@ -24,7 +24,6 @@ class AuthViewModel @Inject constructor(var authApi: AuthApi, var sessionManager
         sessionManager.authenticateWithId(queryWithUserId(userId))
     }
 
-
     fun queryWithUserId(userId: Int): LiveData<AuthResource<User>> {
 
         return LiveDataReactiveStreams.fromPublisher(

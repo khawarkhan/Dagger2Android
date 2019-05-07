@@ -3,6 +3,7 @@ package com.kayf.dagger2android.di.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.kayf.dagger2android.di.ViewModelKey
+import com.kayf.dagger2android.di.scopes.AuthScope
 import com.kayf.dagger2android.ui.auth.AuthViewModel
 import com.kayf.dagger2android.viewmodels.ViewModelProviderFactory
 import dagger.Binds
@@ -25,3 +26,6 @@ abstract class AuthViewModelsModule {
     @ViewModelKey(AuthViewModel::class)
     abstract fun bindAuthViewModel(viewModel: AuthViewModel): ViewModel
 }
+
+
+

@@ -14,8 +14,11 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityBuilderModule {
 
+    /**
+     * ContributesAndroidInjector works as a subcomponent, any module defined here would have life span of equal
+     * to it's activity/fragment's -  if Custom scope is defined i.e @AuthScope
+     */
     @AuthScope
-    @ContributesAndroidInjector(modules = [/*AuthViewModelsModule::class,AuthModule::class,AuthModule::class */ ])
+    @ContributesAndroidInjector(modules = [AuthViewModelsModule::class, AuthModule::class])
     abstract fun contributeAuthActivity(): AuthActivity
-
 }
